@@ -3,7 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ if not .IsHome }}{{ .Title }} — {{ end }}{{ site.Title }}</title>
+        {{ $title := site.Title }}
+        {{ if not .IsHome }}{{ $title = printf "%s — %s" .Title site.Title }}{{ end }}
+        <title>{{ $title }}</title>
+        <link rel="canonical" href="{{ .Permalink }}" />
+        <meta property="og:title" content="{{ $title }}" />
+        <meta property="og:description" content="{{ $title }}" />
+        <meta property="og:url" content="{{ .Permalink }}" />
+        <meta property="og:type" content="website" />
         <link rel="stylesheet" href="{{ "style.css" | relURL }}" />
     </head>
     <body{{ if eq .Type "commentary" }} class="commentary-page"{{ end }}>
