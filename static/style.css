@@ -1,0 +1,135 @@
+:root {
+    color-scheme: light;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #252521;
+    background: #292a28;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: min(100%, 48rem);
+    min-height: calc(100svh - 4rem);
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background: #faf9f5;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+}
+
+.commentary-text {
+    font-family: system-ui, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+body > header,
+body > footer {
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+body > header {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid currentColor;
+}
+
+body > header > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+body > footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px dashed currentColor;
+}
+
+nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+}
+
+main {
+    padding: 2.5rem 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h1,
+h2 {
+    font-size: 1.4rem;
+    margin: 0 0 1.5rem;
+}
+
+p,
+ul,
+ol,
+blockquote,
+pre {
+    margin: 0 0 1.25rem;
+}
+
+li + li {
+    margin-top: 0.35rem;
+}
+
+blockquote {
+    margin-left: 0;
+    padding-left: 1rem;
+    border-left: 2px solid currentColor;
+}
+
+pre {
+    overflow-x: auto;
+    overflow-wrap: normal;
+}
+
+article > footer {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 48rem) {
+    body {
+        min-height: 100svh;
+        margin: 0;
+        padding: 1.5rem clamp(1rem, 5vw, 3rem);
+    }
+
+    main {
+        padding: 2rem 0;
+    }
+}

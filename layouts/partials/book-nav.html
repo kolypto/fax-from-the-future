@@ -1,35 +1,19 @@
-{{ $page := .page }}
-{{ $faxes := (where site.RegularPages "Type" "faxes").ByWeight }}
-{{ $prev := false }}
-{{ $next := index (first 1 $faxes) 0 }}
-
-{{ with $page.Params.fax }}
-    {{ $page = site.GetPage . }}
-{{ end }}
-
-{{ if eq $page.Type "faxes" }}
-    {{ $prev = or ($faxes.Next $page) site.Home }}
-    {{ $next = $faxes.Prev $page }}
-{{ end }}
+{{ $page := . }} {{ $faxes := (where site.RegularPages "Type" "faxes").ByWeight
+}} {{ $prev := false }} {{ $next := index (first 1 $faxes) 0 }} {{ with
+$page.Params.fax }} {{ $page = site.GetPage . }} {{ end }} {{ if eq $page.Type
+"faxes" }} {{ $prev = or ($faxes.Next $page) site.Home }} {{ $next = $faxes.Prev
+$page }} {{ end }}
 
 <nav aria-label="Навигация по книге">
     {{ with $prev }}
     <a href="{{ .RelPermalink }}" rel="prev">← {{ .Title }}</a>
-    {{ end }}
-{{ if .showTOC }}
-{{ if $prev }}
+    {{ end }} {{ if $prev }}
     <span aria-hidden="true"> | </span>
-    {{ end }}
-{{ with site.GetPage "/toc" }}
+    {{ end }} {{ with site.GetPage "/toc" }}
     <a href="{{ .RelPermalink }}">Оглавление</a>
-    {{ end }}
-{{ if $next }}
+    {{ end }} {{ if $next }}
     <span aria-hidden="true"> | </span>
-    {{ end }}
-{{ else if and $prev $next }}
-    <span aria-hidden="true"> | </span>
-    {{ end }}
-{{ with $next }}
+    {{ end }} {{ with $next }}
     <a href="{{ .RelPermalink }}" rel="next">{{ .Title }} →</a>
     {{ end }}
 </nav>
