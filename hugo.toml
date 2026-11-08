@@ -3,3 +3,6 @@ languageCode = 'ru-RU'
 defaultContentLanguage = 'ru'
 title = 'Факсы из будущего.'
 disableKinds = ['taxonomy', 'term', 'RSS', 'section']
+
+[minify.tdewolff.html]
+keepWhitespace = true
