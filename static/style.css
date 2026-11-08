@@ -71,7 +71,6 @@ body > header > div {
 }
 
 body > footer {
-    margin-top: auto;
     padding-top: 1rem;
     border-top: 1px dashed currentColor;
 }
@@ -134,6 +133,14 @@ article img {
 article > footer {
     margin-top: 2rem;
     font-size: 0.85rem;
+}
+
+.fax > footer {
+    margin-top: 4rem;
+}
+
+main:has(.fax) {
+    padding-bottom: 1rem;
 }
 
 @media (max-width: 48rem) {
