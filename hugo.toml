@@ -1,0 +1,5 @@
+#baseURL = 'https://kolypto.github.io/fax-from-the-future/'
+languageCode = 'ru-RU'
+defaultContentLanguage = 'ru'
+title = 'Факсы из будущего.'
+disableKinds = ['taxonomy', 'term', 'RSS', 'section']

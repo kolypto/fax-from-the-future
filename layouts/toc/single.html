@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<ol>
+    <li><a href="{{ site.Home.RelPermalink }}">{{ site.Home.Title }}</a></li>
+    {{ range (where site.RegularPages "Type" "faxes").ByWeight }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ol>
+{{ end }}

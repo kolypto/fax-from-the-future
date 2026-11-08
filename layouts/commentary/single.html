@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="commentary">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }} {{ with site.GetPage .Params.fax }}
+    <footer>
+        <a href="{{ .RelPermalink }}">← Вернуться к факсу</a>
+    </footer>
+    {{ end }}
+</article>
+{{ end }}

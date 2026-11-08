@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{ if not .IsHome }}{{ .Title }} — {{ end }}{{ site.Title }}</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+                {{ with site.GetPage "/toc" }}
+                <a href="{{ .RelPermalink }}">Оглавление</a>
+                {{ end }}
+            </div>
+            {{ partial "book-nav.html" . }}
+        </header>
+
+        <main>{{ block "main" . }}{{ end }}</main>
+
+        <footer>
+            {{ partial "book-nav.html" . }}
+        </footer>
+    </body>
+</html>

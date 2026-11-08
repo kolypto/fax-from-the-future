@@ -2,7 +2,7 @@
 hugo = "latest"
 
 [tasks.build]
-run = "hugo --minify"
+run = "hugo --minify --cleanDestinationDir"
 
 [tasks.serve]
 run = "hugo server --bind 127.0.0.1"
