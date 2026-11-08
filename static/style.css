@@ -33,6 +33,14 @@ body {
     font-family: system-ui, sans-serif;
 }
 
+.authorship {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    text-align: right;
+    white-space: pre-line;
+    color: #5b5b55;
+}
+
 a {
     color: inherit;
     text-underline-offset: 0.2em;

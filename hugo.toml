@@ -4,5 +4,8 @@ defaultContentLanguage = 'ru'
 title = 'Факсы из будущего.'
 disableKinds = ['taxonomy', 'term', 'RSS', 'section']
 
+[markup.goldmark.parser.attribute]
+block = true
+
 [minify.tdewolff.html]
 keepWhitespace = true
