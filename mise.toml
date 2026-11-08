@@ -1,0 +1,8 @@
+[tools]
+hugo = "latest"
+
+[tasks.build]
+run = "hugo --minify"
+
+[tasks.serve]
+run = "hugo server --bind 127.0.0.1"

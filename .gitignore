@@ -1,0 +1,6 @@
+/.*
+!.gitignore
+
+# Hugo
+/public/
+/resources/_gen/
